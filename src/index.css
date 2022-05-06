@@ -1,13 +1,212 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+
+*{
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1rem;
+}
+
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+
+.header h1{
+  font-size: 2.2rem;
+}
+/* 
+===================
+ Toggle Mode Button
+===================
+*/
+.toggle-btn{
+
+  height:30px;
+  width:55px;
+  border-radius: 15px;
+  border:none;
+  background-color:darkgray;
+  padding: px;
+  
+}
+.inner-circle{
+  width:25px;
+  height: 25px;
+  border-radius:15px;
+  cursor: pointer;
+  background-color: #000;
+  transition: all 300ms;
+
+}
+
+.toggled .inner-circle {
+  transform: translateX(19px);
+  background-color: #1E5128;
+}
+
+.toggled .toggle-btn{
+  background-color: #fff;
+}
+
+/* 
+===============
+ Dark Mode 
+===============
+ */
+
+.dark-mode {
+  background-color: #191A19;
+}
+
+.dark-mode h1{
+  color: #D8E9A8;
+  border-bottom:1px solid#D8E9A8;
+}
+
+.dark-mode .search-icon{
+  color: rgb(5, 72, 5);
+}
+
+.dark-mode .note{
+  background-color: #D8E9A8;
+  color: rgb(5, 72, 5);
+  
+}
+
+.dark-mode .note textarea{
+  background-color: #D8E9A8;
+  
+}
+
+.dark-mode .note-new,
+.dark-mode .note-new textarea{
+  background-color:#bde0fe;
+}
+
+.dark-mode .note-save-btn:hover,
+.dark-mode .note-save-btn:focus{
+  background-color: #191A19;
+  color:#fff;
+}
+
+/* ==================
+
+=====================*/
+
+.container{
+  max-width:1100px;
+  max-height: 100%;
+  margin:0 auto;
+  padding: 0 2em;
+  min-height: 100vh;
+  padding-bottom:1em;
+
+}
+
+.note-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+  grid-gap: 20px;
+  margin-bottom: 20px;
+}
+
+
+.note{
+  background-color: #ffff3f;
+  font-size: 1.1rem;
+  /* max-width: 250px; */
+  min-height: 200px;
+  padding:0.2em  1em 1em;
+  border-radius:10px;
+  display: flex;
+  flex-direction: column;
+  /* to preserve white spaces  */
+  white-space: pre-wrap;   
+ 
+}
+
+.note-new,
+.note-new textarea{
+  background-color:#ff99ac;
+  
+  
+}
+
+.note-new textarea{
+  border: none;
+  outline: none;
+  resize:none;
+  padding-top: 0.8em;
+}
+
+.note-save-btn{
+  padding: 10px 16px;
+  cursor:pointer;
+  border-radius: 15px;
+  border:none;
+  font-weight: bold;
+  
+  color:#000;
+}
+.note-save-btn:hover,
+.note-save-btn:focus{
+  background-color: #d81159;
+  color:#fff;
+}
+
+
+.note-footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+/* 
+==============
+ Delete Icon
+==============*/
+
+.delete-icon{
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 120ms;
+}
+.delete-icon:hover{
+  transform: scale(1.2);
+}
+
+
+/* 
+==============
+  Search Note
+==============*/
+
+.search-note{
+  display: flex;
+  align-items: center;
+  background-color: lightgrey;
+  border-radius: 12px;
+  margin:0 0 12px;
+  padding: 0 1em ;
+}
+
+.search-note input{
+  background-color: lightgrey;
+  width: 100%; 
+  border: none;
+  font-size:1rem;
+  margin:0.9375em 0.3em;
+
+}
+
+.search-note input:focus{
+  outline: none;
 }
