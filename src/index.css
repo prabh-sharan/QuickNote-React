@@ -146,6 +146,15 @@ body{
   padding-top: 0.8em;
 }
 
+/* saved note textarea */
+.note-saved-text{
+  resize: none;
+  background-color: #ffff3f;
+  outline: none;
+  border:none;
+  margin-top:0.5em;
+}
+
 .note-save-btn{
   padding: 10px 16px;
   cursor:pointer;
@@ -167,21 +176,26 @@ body{
   justify-content: space-between;
   align-items: center;
   margin-top: auto;
+  
 }
 
+
 /* 
-==============
- Delete Icon
-==============*/
+====================
+ Edit and delete icons
+=====================*/
+
 
 .delete-icon{
   cursor: pointer;
   transform: scale(1);
   transition: transform 120ms;
 }
+
 .delete-icon:hover{
   transform: scale(1.2);
 }
+
 
 
 /* 

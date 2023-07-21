@@ -24,12 +24,12 @@ const App= ()=>{
    {
     id:nanoid(),
     text:"This is my third note!",
-    date:"05/01/2021"
+    date:"5/1/2021"
    },
    {
     id:nanoid(),
     text:"This is my last note!",
-    date:"25/05/2022"
+    date:"25/5/2022"
    }
 
     ])
@@ -47,7 +47,8 @@ const App= ()=>{
         const newNote={
           id:nanoid(),
           text:text,
-          date:date.toLocaleDateString()
+          date:date.toLocaleDateString(),
+          
         }
         //newNotes array with new note added
         const newNotes=[...notes, newNote]
@@ -55,11 +56,13 @@ const App= ()=>{
         setNotes(newNotes)
     }
 
+    // delete a note
     const deleteNote=(id)=>{
         // updated array without deleted note
         const newNotes=notes.filter((note)=> note.id !== id)
         setNotes(newNotes)
-    }
+      }
+    
     const handleSearchNote=(event)=>{
       setSearchText( () => event.target.value)
     }
@@ -74,8 +77,9 @@ const App= ()=>{
       <div className="container">
         <Header handleDarkMode={handleDarkMode} />
         <SearchNote handleSearchNote={handleSearchNote} />
+        
         <NoteList 
-          notes={notes.filter(
+           notes={notes.filter(
             (note)=>note.text.toLowerCase().includes(searchText.toLowerCase())
             )} 
             handleAddNote={addNote}

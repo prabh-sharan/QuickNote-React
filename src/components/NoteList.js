@@ -1,7 +1,6 @@
 import AddNote from "./AddNote";
 import Note from "./Note";
 
-
 const NoteList=({notes, handleAddNote,handleDeleteNote})=>{
     return(
         <div className="note-list">
@@ -10,7 +9,7 @@ const NoteList=({notes, handleAddNote,handleDeleteNote})=>{
                   id={note.id}
                   text={note.text}
                   date={note.date}
-                  handleDeleteNote={handleDeleteNote} 
+                  handleDeleteNote={handleDeleteNote}
                 />)
             }
             <AddNote  handleAddNote={handleAddNote}  />
